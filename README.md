@@ -32,48 +32,6 @@ podemos arrancar con instalar la librería después de descargarla, descomprimim
 nosotros cogemos un ejemplo de blink  y alteramos  el codigo a partir de lo que necesitamos, en este caso una configuración para  tres sensores de humedad 
   nos basamos en esta imagen, pero ignoramos la fotoresistencia y simulamos que  son los dos tornillos con  con el cable. 
 
-//This example code is in the public domain.
-
-
-
-//Pin Electroválvula
-int ElecVal = 3;
-//PIn sensor humedad
-int Humed1= 1;
-// Dato sensor
-int Dato1;
-//LED
-int led=4;
-
-
-
-
-void setup() {                
- // salida electrovalvula 
- pinMode(ElecVal, OUTPUT);  
-  pinMode(led, OUTPUT);  
-//  analogWrite(led, 200);
-// entrada sensor humedad
-pinMode(Humed1,INPUT);
-//STARTED LED
-  analogWrite(led, 200);
-  delay(2000);
-    analogWrite(led,0);
-}
-
-
-void loop(){
-//lectura del sensor de humedad en la variable Dato1
-Dato1=analogRead(Humed1);
-//comparador de rango del Dato1
- if(Dato1>512)
-{digitalWrite(ElecVal, LOW);
-  analogWrite(led,  0);
-}else{
-digitalWrite(ElecVal, HIGH);
-  analogWrite(led, 200);
-}  
-}
 
  
 para  el sensor de humedad lo HIcimos un con dos cables de sonido, aderidos a dos tornillos, al otro lado del cable va la conexion que debe ser puesta a la entrada analoga del microcontolador,  en este caso el pin 7.   
